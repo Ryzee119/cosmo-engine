@@ -1,0 +1,53 @@
+XBE_TITLE = CosmosCosmicAdventure
+GEN_XISO = $(XBE_TITLE).iso
+
+NXDK_SDL = y
+
+NXDK_STACKSIZE = 131072
+
+SRCS +=	src/actor.c \
+		src/actor_collision.c \
+		src/actor_toss.c \
+		src/actor_worktype.c \
+		src/b800.c \
+		src/backdrop.c \
+		src/cartoon.c \
+		src/config.c \
+		src/demo.c \
+		src/dialog.c \
+		src/effects.c \
+		src/font.c \
+		src/fullscreen_image.c \
+		src/game.c \
+		src/high_scores.c \
+		src/input.c \
+		src/main.c \
+		src/map.c \
+		src/palette.c \
+		src/platforms.c \
+		src/player.c \
+		src/save.c \
+		src/status.c \
+		src/tile.c \
+		src/util.c \
+		src/video.c \
+		src/files/file.c \
+		src/files/vol.c \
+		src/files/file.c \
+		src/sound/audio.c \
+		src/sound/music.c \
+		src/sound/opl.c \
+		src/sound/sfx.c
+		
+CFLAGS += -I$(CURDIR)/src \
+		-O2 -Wall
+
+new_all: copy_resources all
+
+include $(NXDK_DIR)/Makefile
+
+copy_resources:
+	@mkdir -p $(OUTPUT_DIR)
+	@mkdir -p $(OUTPUT_DIR)/game_data
+	@cp $(CURDIR)/data/gamecontrollerdb.txt $(OUTPUT_DIR)/game_data/
+	@cp $(CURDIR)/LICENSE $(OUTPUT_DIR)/LICENSE.txt
