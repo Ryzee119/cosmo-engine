@@ -19,7 +19,11 @@
  */
 
 #include <stdlib.h>
+#ifdef NXDK
+#include <string.h>
+#else
 #include <memory.h>
+#endif
 #include <assert.h>
 #include "vol.h"
 #include "file.h"
