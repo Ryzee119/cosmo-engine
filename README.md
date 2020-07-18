@@ -19,3 +19,13 @@ Cosmo-engine is built with [CMake][2] and requires [SDL2][3] and [SDL_mixer][4]
 [2]: https://cmake.org/
 [3]: https://www.libsdl.org/
 [4]: https://www.libsdl.org/projects/SDL_mixer/
+
+
+Compiling (Original Xbox)
+-------------------------
+First setup and install this fork of [nxdk](https://github.com/Ryzee119/nxdk)
+Then do this from your working directoy:  
+```
+cd cosmo-engine
+make -f Makefile.nxdk NXDK_DIR=/path/to/nxdk
+```
